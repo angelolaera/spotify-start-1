@@ -1,13 +1,13 @@
-/* src/index.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background: rgb(17, 23, 32);
+  background: linear-gradient(263deg, rgba(17, 23, 32, 1) 0%, rgba(52, 71, 99, 1) 50%, rgba(63, 85, 117, 1) 100%);
 }
 
 .sidebar {
-  width: 250px;
+  width: 350px;
   height: 100vh;
   background-color: #1d1d1d;
   color: white;
@@ -38,7 +38,7 @@ body {
 
 .album-card img {
   width: 100px;
-  height: 100px;
+  height: 200px;
   object-fit: cover;
 }
 

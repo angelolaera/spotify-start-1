@@ -9,11 +9,11 @@ const HomePage = () => {
   const [hipHop, setHipHop] = useState([]);
 
   // Funzione per recuperare gli album
-  const fetchAlbums = async (query, setter) => {
+  const fetchAlbums = async (query, setQuery) => {
     try {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`);
       const data = await response.json();
-      setter(data.data);
+      setQuery(data.data);
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -21,17 +21,15 @@ const HomePage = () => {
 
   useEffect(() => {
     // Recupera gli album per ciascuna categoria
-    fetchAlbums("queen", setRockClassics);
+    fetchAlbums("sum41", setRockClassics);
     fetchAlbums("katy perry", setPopCulture);
-    fetchAlbums("eminem", setHipHop);
+    fetchAlbums("xxxtentation", setHipHop);
   }, []);
 
   return (
     <Container>
-      <h1 className="my-4">Album Recommendations</h1>
-
       <Row className="mb-3 ">
-        <h2>Rock Classics</h2>
+        <h2 className="text-white">Rock Classics</h2>
         {rockClassics.slice(0, 4).map((album) => (
           <Col xs={12} md={6} lg={3} key={album.id} className="mb-4">
             <AlbumCard album={album} />
@@ -40,7 +38,7 @@ const HomePage = () => {
       </Row>
 
       <Row className="mb-3 ">
-        <h2>POP Culture</h2>
+        <h2 className="text-white">POP Culture</h2>
         {popCulture.slice(0, 4).map((album) => (
           <Col xs={12} md={6} lg={3} key={album.id} className="mb-4">
             <AlbumCard album={album} />
@@ -49,7 +47,7 @@ const HomePage = () => {
       </Row>
 
       <Row className="mb-3 ">
-        <h2>Hip Hop</h2>
+        <h2 className="text-white">Hip Hop</h2>
         {hipHop.slice(0, 4).map((album) => (
           <Col xs={12} md={6} lg={3} key={album.id} className="mb-4">
             <AlbumCard album={album} />

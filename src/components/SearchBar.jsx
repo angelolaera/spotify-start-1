@@ -12,7 +12,7 @@ const SearchBar = () => {
     });
   };
 
-  return <input type="text" placeholder="Cerca artista..." onChange={handleSearch} />;
+  return <input className="rounded-3 w-100" type="text" placeholder="Cerca artista..." onChange={handleSearch} />;
 };
 
 export default SearchBar;

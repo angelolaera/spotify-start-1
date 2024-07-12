@@ -12,7 +12,6 @@ const Player = () => {
       <h2>{selectedAlbum.artist.name}</h2>
       <img src={selectedAlbum.album.cover_medium} alt={selectedAlbum.album.title} />
       <audio controls>
-        {/* Supponiamo che `selectedAlbum.album.tracklist` sia un URL audio valido */}
         <source src={selectedAlbum.album.tracklist} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
